@@ -13,9 +13,9 @@ app.use(bodyparser.urlencoded({extended: "true"}))
 // app.engine("html", ejs.renderFile)
 // app.set("view engine", "html");
 app.set("view engine", "ejs")
-app.set("views", path.join(__dirname, "../frontend/views"))
+app.set("views", path.join(__dirname, "./frontend/views"))
 //for static or styles
-app.use("/static", express.static(path.join(__dirname, "../frontend/static")))
+app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
 app.listen(port, ()=>{
     console.log(`Server started at port ${port}`)
@@ -24,5 +24,5 @@ app.listen(port, ()=>{
 const cors = require("cors")
 app.use(cors())
 //routes
-const routes = require("./routes/appRoutes")
+const routes = require("./backend/routes/appRoutes")
 app.use(routes)

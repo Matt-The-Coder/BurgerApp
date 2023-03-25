@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -15,5 +16,13 @@
     "ejs": "^3.1.8",
     "express": "^4.18.2",
     "mysql": "^2.18.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Supremo1717/BurgerApp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Supremo1717/BurgerApp/issues"
+  },
+  "homepage": "https://github.com/Supremo1717/BurgerApp#readme"
 }
