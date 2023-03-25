@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyparser = require("body-parser");
 const app = express();
-const port = process.env.port || 5000;
+const PORT = process.env.PORT || 5000;
 const path = require("path")
 const ejs = require("ejs")
 
@@ -17,8 +17,8 @@ app.set("views", path.join(__dirname, "./frontend/views"))
 //for static or styles
 app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
-app.listen(port, ()=>{
-    console.log(`Server started at port ${port}`)
+app.listen(PORT, ()=>{
+    console.log(`Server started at port ${PORT}`)
 })
 //Cors
 const cors = require("cors")
