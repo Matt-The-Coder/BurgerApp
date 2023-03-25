@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <%-include("./partials/header.ejs")%>
+</head>
+<body>
+      <div class="main">
+       <%-include('./partials/navbar.ejs')%>
+       <div class="registration">
+        <ul>
+        <%for(const datas of data){%>
+            
+            <li><%=datas%> </li>
+      <%  }%>
+     
+    </ul>
+    
+      </div>
+      <%-include('./partials/footer.ejs')%>
+    </div>
+</body>
+</html>
