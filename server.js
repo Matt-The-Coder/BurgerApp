@@ -4,11 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const path = require("path")
 const ejs = require("ejs")
-//Services 
-const services = require("./backend/services/products")
-const {ret, ins, del, upd} = services();
-// Database
-const createTable = require("./backend/database/table")
+
 //middleware
 
 app.use(bodyparser.json())
