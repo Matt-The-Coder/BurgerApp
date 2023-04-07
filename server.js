@@ -20,7 +20,7 @@ app.use(bodyparser.urlencoded({extended: "true"}))
 app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "./frontend/views"))
 //for static or styles
-app.use("static", express.static(path.join(__dirname, "./frontend/static")))
+app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
 app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
