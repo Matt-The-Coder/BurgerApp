@@ -14,7 +14,7 @@ module.exports = () =>{
     const InsertProduct = async(ProductName, ProductPrice)=>{
         
         try {
-            const query = `Insert into product(name, price) values('${ProductName}', ${ProductPrice})`;
+            const query = `Insert into products (name, price) values('${ProductName}', ${ProductPrice})`;
             const result = await db(query)
             return result;
         } catch (error) {
@@ -24,13 +24,13 @@ module.exports = () =>{
     }
   
     const DeleteProduct = async(ProductID)=>{
-        const query = `delete from product where id = ${ProductID}`;
+        const query = `delete from products where id = ${ProductID}`;
         const result = await db(query)
         return result;
     }
   
     const UpdateProduct = async()=>{
-        const query = "update product set price = 3 where id = 2";
+        const query = "update products set price = 3 where id = 1";
         const result = await db(query)
         return result;
     }
@@ -38,10 +38,10 @@ module.exports = () =>{
 
 
 return {
-    ret: RetrieveProduct(),
-    ins: InsertProduct(),
-    del: DeleteProduct(),
-    upd: UpdateProduct()
+    ret: RetrieveProduct,
+    ins: InsertProduct,
+    del: DeleteProduct,
+    upd: UpdateProduct
 }
 
 

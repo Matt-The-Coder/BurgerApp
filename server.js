@@ -6,7 +6,7 @@ const path = require("path")
 const ejs = require("ejs")
 //Services 
 const services = require("./backend/services/products")
-const {ret, ins, del, upd} = services()
+const {ret, ins, del, upd} = services();
 // Database
 const createTable = require("./backend/database/table")
 //middleware
@@ -24,7 +24,7 @@ app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
 app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
-   await ret()
+    console.log(await ret())
 
 
 })
