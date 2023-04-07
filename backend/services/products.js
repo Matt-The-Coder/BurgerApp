@@ -2,24 +2,35 @@ const db = require('../database/connection')
 
 module.exports = () =>{
     const RetrieveProduct = async()=>{
-        const query = "Select * from products";
-        const result = await db(query)
-        return result;
+        try {
+            const query = "Select * from products";
+            const result = await db(query)
+            return result;
+        } catch (error) {
+            console.log(error)
+        }
+       
     }
-    const InsertProduct = async()=>{
-        const query = "Insert into product() values()";
-        const result = await db(query)
-        return result;
+    const InsertProduct = async(ProductName, ProductPrice)=>{
+        
+        try {
+            const query = `Insert into product(name, price) values('${ProductName}', ${ProductPrice})`;
+            const result = await db(query)
+            return result;
+        } catch (error) {
+            console.log(error)
+        }
+        
     }
   
-    const DeleteProduct = async()=>{
-        const query = "delete from product where id = ";
+    const DeleteProduct = async(ProductID)=>{
+        const query = `delete from product where id = ${ProductID}`;
         const result = await db(query)
         return result;
     }
   
     const UpdateProduct = async()=>{
-        const query = "update product set id = 3 where id = 2";
+        const query = "update product set price = 3 where id = 2";
         const result = await db(query)
         return result;
     }
