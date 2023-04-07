@@ -10,7 +10,7 @@ const {ret, ins, del, upd} = services();
 // Database
 const createTable = require("./backend/database/table")
 //middleware
-
+// git add . && git commit -m "New Update" && git push
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: "true"}))
 //Front End
@@ -22,9 +22,9 @@ app.set("views", path.join(__dirname, "./frontend/views"))
 //for static or styles
 app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
-app.listen(PORT, ()=>{
+app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
-
+     console.log(await ret())
 })
 //Cors
 const cors = require("cors")
