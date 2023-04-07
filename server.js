@@ -22,7 +22,9 @@ app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
     
-    
+    const {ret: boss, ins, del, upd} = services()
+    console.log(await boss)
+
 })
 //Cors
 const cors = require("cors")
