@@ -22,7 +22,7 @@ app.set("views", path.join(__dirname, "./frontend/views"))
 //for static or styles
 app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
-app.listen(PORT, async ()=>{
+app.listen(PORT, ()=>{
     console.log(`Server started at port ${PORT}`)
 
 })
