@@ -1,4 +1,3 @@
-const e = require('express')
 const mysql = require('mysql')
 const db = mysql.createPool({
     host: 'us-cdbr-east-06.cleardb.net',

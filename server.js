@@ -24,8 +24,6 @@ app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
 app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
-    console.log(await ret())
-
 
 })
 //Cors
