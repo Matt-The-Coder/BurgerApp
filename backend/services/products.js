@@ -27,10 +27,10 @@ module.exports = () =>{
 
 
 return {
-    RetrieveProduct,
-    InsertProduct,
-    DeleteProduct,
-    UpdateProduct
+    ret: RetrieveProduct(),
+    ins: InsertProduct(),
+    del: DeleteProduct(),
+    upd: UpdateProduct()
 }
 
 
