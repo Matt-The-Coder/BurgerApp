@@ -27,7 +27,7 @@ app.listen(PORT, async ()=>{
     // TABLE CREATION
     await createTable()
   
-    await upd({id: 64, name: "Updated Name", price: 50})
+    console.log(await upd({id: 64, name: "Updated Name", price: 10}))
     
      console.log(await ret())
 })
