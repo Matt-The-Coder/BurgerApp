@@ -24,6 +24,10 @@ app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
 app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
+    // TABLE CREATION
+    await createTable()
+    await ins({name: "New Product", price: 300})
+    await ins({name: "New Product 2", price: 400})
      console.log(await ret())
 })
 //Cors
