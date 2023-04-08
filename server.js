@@ -26,8 +26,7 @@ app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
     // TABLE CREATION
     await createTable()
-    
-   await del(74)
+    console.log(await ret())
 })
 //Cors
 const cors = require("cors")
