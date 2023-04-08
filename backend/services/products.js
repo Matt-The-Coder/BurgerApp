@@ -16,7 +16,7 @@ module.exports = () => {
 
 const {name, price} = CreateObj;
         try {
-            const query = `INSERT INTO products (id, name, price) VALUES(null,'${name}', ${price})`;
+            const query = `INSERT INTO products (id, name, price) VALUES(null, '${name}', ${price})`;
             await db(query)
             return true;
         } catch (error) {
