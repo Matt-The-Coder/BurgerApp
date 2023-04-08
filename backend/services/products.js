@@ -18,7 +18,7 @@ const {name, price} = CreateObj;
         try {
             const query = `INSERT INTO products (id, name, price) VALUES(null,'${name}', ${price})`;
             await db(query)
-            return "Inserted Successfully!";
+            return true;
         } catch (error) {
 
             console.log(error)
@@ -31,7 +31,7 @@ const {name, price} = CreateObj;
        try {
         const query = `DELETE FROM products WHERE id = ${ProductID}`;
         await db(query)
-        return "Deleted Successfully!";
+        return true;
        } catch (error) {
         console.log(error)
         return false;
@@ -44,7 +44,7 @@ const {name, price} = CreateObj;
         try {
             const query = `UPDATE products SET name = '${name}', price = ${price} WHERE id = ${id}`;
             await db(query)
-            return "Updated Successfully!";
+            return true;
         } catch (error) {
             console.log(error)
             return false;
