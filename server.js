@@ -26,8 +26,9 @@ app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
     // TABLE CREATION
     await createTable()
-    await ins({name: "New Product", price: 300})
-    await ins({name: "New Product 2", price: 400})
+    await ins({name: "New Product 3", price: 600})
+    await upd({id: 34, name: "Updated Name", price: 250})
+    await del(24)
      console.log(await ret())
 })
 //Cors
