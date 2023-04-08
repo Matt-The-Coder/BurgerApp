@@ -3,7 +3,7 @@ const db = require('../database/connection')
 module.exports = () => {
     const RetrieveProduct = async () => {
         try {
-            const query = "Select * from products";
+            const query = "SELECT * FROM products";
             const result = await db(query)
             return result;
         } catch (error) {
@@ -16,7 +16,7 @@ module.exports = () => {
 
 const {name, price} = CreateObj;
         try {
-            const query = `Insert into products (id, name, price) values(null,'${name}', ${price})`;
+            const query = `INSERT INTO products (id, name, price) VALUES(null,'${name}', ${price})`;
             await db(query)
             return "Inserted Successfully!";
         } catch (error) {
@@ -29,7 +29,7 @@ const {name, price} = CreateObj;
 
     const DeleteProduct = async (ProductID) => {
        try {
-        const query = `delete from products where id = ${ProductID}`;
+        const query = `DELETE FROM products WHERE id = ${ProductID}`;
         await db(query)
         return "Deleted Successfully!";
        } catch (error) {
