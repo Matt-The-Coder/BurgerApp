@@ -42,7 +42,7 @@ const {name, price} = CreateObj;
     const UpdateProduct = async (UpdateObj) => {
   const {id, name, price} = UpdateObj
         try {
-            const query = `update products set name = ${name}, price = ${price} where id = ${id}`;
+            const query = `update products set name = '${name}', price = ${price} where id = ${id}`;
             await db(query)
             return "Updated Successfully!";
         } catch (error) {
