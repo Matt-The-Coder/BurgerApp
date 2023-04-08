@@ -27,7 +27,7 @@ app.listen(PORT, async ()=>{
     // TABLE CREATION
     await createTable()
     
-   await del(75)
+   await del(74)
 })
 //Cors
 const cors = require("cors")
