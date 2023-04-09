@@ -1,16 +1,17 @@
 const mysql = require('mysql')
 const db = mysql.createPool({
-    host: 'us-cdbr-east-06.cleardb.net',
-    user: 'b0e89b7ba9ad89',
-    password: '5fdd47a0',
-    database: 'heroku_f4f1e018f8b1b47'
+    host: 'r4wkv4apxn9btls2.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'o4q0xmco49a27gfh',
+    password: 'ulap93u072nrxank',
+    database: 'mzj4u1ffhgxu49ed',
+    port: "3306"
 })
 
-module.exports = (query)=>{
+module.exports = (sql)=>{
     return new Promise((resolve, reject)=>{
         db.getConnection((error, connection)=>{
             if(error) reject(error);
-            connection.query(query, (error, result)=>{
+            connection.query(sql, (error, result)=>{
               if(error){
                  reject(error)
               } else{

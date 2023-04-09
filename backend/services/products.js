@@ -1,5 +1,6 @@
 const db = require('../database/connection')
 
+
 module.exports = () => {
     const RetrieveProduct = async () => {
         try {
@@ -16,7 +17,7 @@ module.exports = () => {
 
 const {name, price} = CreateObj;
         try {
-            const query = `INSERT INTO products (id, name, price) VALUES(null, '${name}', ${price})`;
+            const query = `INSERT INTO products (name, price) VALUES('${name}', ${price})`;
             await db(query)
             return true;
         } catch (error) {

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <%-include("./partials/header.ejs")%>
+</head>
+<body>
+      <div class="main">
+       <%-include('./partials/navbar.ejs')%>
+       <div class="main-form">
+      <div class="form">
+        <h1>Create a Product</h1>
+        <input type="text" id="Cname" placeholder="Enter ProductName">
+        <input type="text" id="Cprice"  placeholder="Enter ProductPrice">
+        <input type="text" id="Cpictureloc"  placeholder="Enter Picture File Location">
+        <button id="ins">Create</button>
+      </div>
+      <div class="form">
+        <h1>Update a Product</h1>
+        <input type="text" id="Uid"  placeholder="Enter ProductID">
+        <input type="text" id="Uname"  placeholder="Enter ProductName">
+        <input type="text" id="Uprice"  placeholder="Enter ProductPrice">
+        <input type="text" id="Upictureloc"  placeholder="Enter Picture File Location">
+        <button id="upd">Update</button>
+      </div>
+      <div class="form">
+        <h1>Delete a Product</h1>
+        <input type="text" id="Did" placeholder="Enter ProductID">
+        <button id="del">Delete</button>
+      </div>
+      
+      </div>
+      <%-include('./partials/footer.ejs')%>
+    </div>
+    <script src="../static/js/admin.js"></script>
+</body>
+</html>

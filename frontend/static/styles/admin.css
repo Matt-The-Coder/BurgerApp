@@ -1,0 +1,24 @@
+.main-form{
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ grid-template-rows: 1fr;
+align-items:center;
+gap: 20px;
+
+}
+.main-form .form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.main-form .form input{
+    width: 200px;
+    margin-top: 10px;
+    color: black;
+}
+.main-form .form button{
+    width:60px;
+    margin-top: 5px;
+    color: black;
+    cursor: pointer;
+}
