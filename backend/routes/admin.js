@@ -9,18 +9,42 @@ routes.get("/admin", (req, res, next)=>{
 })
 
 routes.post("/insertProduct", async (req, res)=>{
-    const {name, price} = req.body;
-    await ins({name: name, price: price})
+    try {
+        const {name, price, PicFileLocation} = req.body;
+        await ins({name: name, price: price, picloc: PicFileLocation})  
+        res.status(200).json({message: "Created Successfully!"})
+  
+    } catch (error) {
+        console.log("There is an error: ", error)
+        res.status(400).json({message: "Unable to create!"})
+    }
+
    
 })
 routes.put("/updateProduct", async (req, res)=>{
-    const {id, name, price} = req.body;
-    
-    await upd({id: id, name: name, price: price})
+    try {
+        const {id, name, price, PicFileLocation} = req.body;
+        await upd({id: id, name: name, price: price, PicFileLocation: PicFileLocation})
+        res.status(200).json({message: "Updated Successfully!"})
+    } catch (error) {
+        console.log("There is an error: ", error)
+        res.status(400).json({message: "Unable to update!"})
+    }
+ 
 })
 routes.delete("/deleteProduct", async (req, res)=>{
+    try {
+         
     const {id} = req.body;
-    await del(id);
+    await del(id); 
+    res.status(200).json({message: "Deleted Successfully!"})
+    } catch (error) {
+        console.log("The error is: ", error)
+        res.status(400).json({message: "Unable to Delete!"})
+    }
+  
+    
+
 })
 
 module.exports = routes

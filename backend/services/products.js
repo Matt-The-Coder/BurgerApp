@@ -15,9 +15,9 @@ module.exports = () => {
     }
     const InsertProduct = async (CreateObj) => {
 
-const {name, price} = CreateObj;
+const {name, price, picloc} = CreateObj;
         try {
-            const query = `INSERT INTO products (name, price) VALUES('${name}', ${price})`;
+            const query = `INSERT INTO products (name, price, PicFileLocation) VALUES('${name}', ${price}, '${picloc}')`;
             await db(query)
             return true;
         } catch (error) {
@@ -41,9 +41,9 @@ const {name, price} = CreateObj;
     }
 
     const UpdateProduct = async (UpdateObj) => {
-  const {id, name, price} = UpdateObj
+  const {id, name, price, PicFileLocation} = UpdateObj
         try {
-            const query = `UPDATE products SET name = '${name}', price = ${price} WHERE id = ${id}`;
+            const query = `UPDATE products SET name = '${name}', price = ${price}, PicFileLocation = '${PicFileLocation}' WHERE id = ${id}`;
             await db(query)
             return true;
         } catch (error) {

@@ -12,6 +12,7 @@ const services = require("./backend/services/products")
 const {ret, ins, del, upd} = services();
 //middleware
 // git add . && git commit -m "New Update" && git push
+const db = require("./backend/database/connection")
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({extended: "true"}))
 //Front End
@@ -25,8 +26,10 @@ app.use("/static", express.static(path.join(__dirname, "./frontend/static")))
 //server
 app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
-    // TABLE CREATION
+    // TABLE CREATION 
   await createTable() 
+  // console.log(await db("ALTER TABLE products MODIFY COLUMN PicFileLocation varchar(255)"))
+  // console.log(await db("TRUNCATE TABLE products"))
   console.log(await ret()) 
 })
 //Cors

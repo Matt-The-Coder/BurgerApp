@@ -1,9 +1,12 @@
 const express = require("express");
 const routes = express.Router();
 const cors = require("cors");
-
-routes.get("/",(req, res, next)=>{
-  res.render("index")
+//services
+const services = require("../services/products")
+const {ret, ins, del, upd} = services ()
+routes.get("/", async (req, res, next)=>{
+  const ProductData = await ret();
+  res.render("index", {data: ProductData})
 })
 
 module.exports = routes
