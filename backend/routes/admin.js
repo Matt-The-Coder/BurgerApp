@@ -2,10 +2,21 @@ const express = require("express")
 const routes = express.Router();
 //Services 
 const services = require("../services/products")
+const truncate = require("../services/truncate")
 const {ret, ins, del, upd} = services();
-routes.get("/admin", (req, res, next)=>{
+routes.get("/admin", async (req, res, next)=>{
+    const data = await ret()
+    res.render("admin", {queries: data})
+}) 
+routes.delete("/truncate", async (req, res)=>{
+    try {
+        await truncate()
+        res.status(200).json({message: "Cleared Successfully!"})
+    } catch (error) {
+        console.log(error)
+        res.status(400).json({message: "Clearing Unsuccessful!"})
 
-    res.render("admin")
+    }
 })
 
 routes.post("/insertProduct", async (req, res)=>{

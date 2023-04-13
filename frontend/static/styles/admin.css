@@ -1,4 +1,5 @@
 .main-form{
+    height: 60vh;
  display: grid;
  grid-template-columns: 1fr 1fr 1fr;
  grid-template-rows: 1fr;
@@ -21,4 +22,49 @@ gap: 20px;
     margin-top: 5px;
     color: black;
     cursor: pointer;
+}
+.main table {
+    align-items: center;
+    background-color: black;
+    border-collapse: collapse;
+    height: 150px;
+    width: 600px;
+    margin-left: 80px;
+    margin-top: 40px;
+}
+.main table thead tr th, .main table tbody tr td{
+    color: white;
+    border: white 1px solid;
+    text-align: center;
+   
+
+}
+.main .list {
+    display: flex;
+    height: 40vh;
+    margin-top: 40px;
+
+}
+.main .list h1{
+    margin: 0;
+}
+.main .list .burgerList{
+    margin-left: 100px;
+    margin-top: 40px;
+}
+.main .list .burgerList ul{
+    list-style: inside;
+}
+.main .list .truncate{
+    margin-top: 40px;
+    margin-left: 100px;
+    text-align: center;
+}
+.main .list .truncate button{
+   color: black;
+   background-color: rgb(255, 255, 255);
+   margin-top: 30px;
+   border-radius: 5px;
+   padding: 10px;
+   cursor: pointer;
 }

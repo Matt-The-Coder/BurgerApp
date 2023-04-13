@@ -8,8 +8,44 @@
     <%-include("./partials/header.ejs")%>
 </head>
 <body>
-      <div class="main">
+      <div class="main" style="display: grid; grid-template-columns: 1fr; grid-template-rows: 1fr 1fr 1fr 1fr;">
        <%-include('./partials/navbar.ejs')%>
+       <div class="list">
+        <table>
+          <thead><tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Price</th>
+            <th>Picture File Location</th>
+          </tr></thead>
+          <tbody>
+            
+            <%for (let i = 0; i<queries.length; i++) {%>
+              <tr>
+                <td><%=queries[i].id%></td>
+                <td><%=queries[i].name%></td>
+                <td><%=queries[i].price%></td>
+                <td><%=queries[i].PicFileLocation%></td>
+              </tr>
+              <%}%>
+          </tbody>
+         </table>
+         <div class="burgerList">
+          <h1>List of Burgers</h1>
+          <ul>
+           <li>Barbecue</li>
+           <li>Cheesy</li>
+           <li>Classic</li>
+           <li>Crispy</li>
+           <li>Grilled</li>
+          </ul>
+         </div>
+         <div class="truncate">
+          <h1>Clear Datas</h1>
+          <button id="truncate">Clear </button>
+         </div>
+       </div>
+          
        <div class="main-form">
       <div class="form">
         <h1>Create a Product</h1>

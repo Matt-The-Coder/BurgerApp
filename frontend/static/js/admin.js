@@ -12,9 +12,23 @@ const upictureloc = document.querySelector("#Upictureloc");
 // input and button of deleteProduct
 const did = document.querySelector("#Did")
 const delbtn = document.querySelector("#del");
+// truncate button
+const truncatebtn = document.querySelector("#truncate")
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
+
+  truncatebtn.addEventListener("click", async ()=>{
+    const data = await fetch("/truncate", {
+      method: "DELETE",
+      headers:{
+        "content-type": "application/json"
+      }
+    })
+
+    const result = await data.json()
+    alert(result.message)
+  })
 
 insbtn.addEventListener("click", async()=>{
     
