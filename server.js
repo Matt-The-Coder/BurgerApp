@@ -28,8 +28,8 @@ app.listen(PORT, async ()=>{
     console.log(`Server started at port ${PORT}`)
     // TABLE CREATION 
   await createTable() 
-  // console.log(await db("ALTER TABLE products MODIFY COLUMN PicFileLocation varchar(255)"))
-  // console.log(await db("TRUNCATE TABLE products"))
+  // console.log(await db("ALTER TABLE products ADD COLUMN PicFileLocation varchar(255)"))
+  // console.log(await db("show tables"))
   console.log(await ret()) 
 })
 //Cors
